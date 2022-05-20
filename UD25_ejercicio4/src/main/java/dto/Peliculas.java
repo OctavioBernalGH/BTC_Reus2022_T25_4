@@ -13,8 +13,8 @@ public class Peliculas {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)//busca ultimo valor y lo incrementa
 	private int codigo;
-	@Column(name="nombre")
-	private String nombre;
+	@Column(name="nombrePelicula")
+	private String nombrePelicula;
 	@Column(name="CalificacionEdad")
 	private int CalificacionEdad;
 	
@@ -26,12 +26,12 @@ public class Peliculas {
 	/**
 	 * 
 	 * @param codigo
-	 * @param nombre
+	 * @param nombrePelicula
 	 * @param calificacionEdad
 	 */
-	public Peliculas(int codigo, String nombre, int calificacionEdad) {
+	public Peliculas(int codigo, String nombrePelicula, int calificacionEdad) {
 		this.codigo = codigo;
-		this.nombre = nombre;
+		this.nombrePelicula = nombrePelicula;
 		CalificacionEdad = calificacionEdad;
 	}
 	
@@ -57,7 +57,7 @@ public class Peliculas {
 	 * @return de nombre
 	 */
 	public String getNombre() {
-		return nombre;
+		return nombrePelicula;
 	}
 
 	/**
@@ -65,7 +65,7 @@ public class Peliculas {
 	 * @param nombre
 	 */
 	public void setNombre(String nombre) {
-		this.nombre = nombre;
+		this.nombrePelicula = nombre;
 	}
 
 	/**
@@ -87,6 +87,6 @@ public class Peliculas {
 	// Metodo impresion de datos por consola
 	@Override
 	public String toString() {
-		return "Peliculas [codigo=" + codigo + ", nombre=" + nombre + ", CalificacionEdad=" + CalificacionEdad + "]";
+		return "Peliculas [codigo=" + codigo + ", nombre=" + nombrePelicula + ", CalificacionEdad=" + CalificacionEdad + "]";
 	}	
 }

@@ -619,3 +619,55 @@ insert into `salas`(`codigo`,`pelicula`, `nombre_sala`, `id_peliculas`)values(3,
 insert into `salas`(`codigo`,`pelicula`, `nombre_sala`, `id_peliculas`)values(4,4,'Sala 4',4);
 insert into `salas`(`codigo`,`pelicula`, `nombre_sala`, `id_peliculas`)values(5,5,'Sala 5',5);
 ```
+
+Ahora se verificará el funcionamiento del aplicativo Spring mediante la aplicación postman. Esta aplicación nos permite enviar distintas peticiones a un servidor enviando por parámetros y body lo necesario para un correcto funcionamiento de la api.
+
+El primero de todos los métodos HTTP utilizados es el GET. Para ello se inicia postman y se ejecuta este método con la siguiente dirección a la api:
+
+<p align="center">
+	<img src="https://user-images.githubusercontent.com/103035621/169661166-5a0b10a9-0022-4147-b4a9-3b1c645545c3.PNG">
+</p>
+
+En la anterior imagen y la siguiente se puede observar el listado de peliculas y salas mediante el método GET y con sus respectivas rutas en la api.
+
+<p align="center">
+	<img src="https://user-images.githubusercontent.com/103035621/169661178-6b7760e0-69d6-4e73-bcf0-4061cdf070bf.PNG">
+</p>
+
+En la siguiente imagen se puede observar una pelicula filtrada por su identificador.
+
+<p align="center">
+	<img src="https://user-images.githubusercontent.com/103035621/169661198-ea9c487c-dac6-4d3f-b5b3-047b5b895ef9.PNG">
+</p>
+
+A continuación se filtran las salas mediante un identificador de salas.
+
+<p align="center">
+	<img src="https://user-images.githubusercontent.com/103035621/169661254-45bdfcda-450e-4c2f-99cd-1f8162baabe8.PNG">
+</p>
+
+A continuación se muestra la eliminación de una sala relacionada con una pelicula:
+
+<p align="center">
+	<img src="https://user-images.githubusercontent.com/103035621/169661434-af78e054-52ca-4dff-860e-93040e2763e6.PNG">
+</p>
+
+Se realiza el mismo ejemplo al eliminar una única sala:
+
+<p align="center">
+	<img src="https://user-images.githubusercontent.com/103035621/169661446-9d266306-6860-46b1-9b5e-eb6bef002e78.PNG">
+</p>
+
+En la siguiente captura se creará una sala:
+
+<p align="center">
+	<img src="https://user-images.githubusercontent.com/103035621/169661524-0d8f37fe-2580-4457-9eb4-e0b19a44cbd2.PNG">
+</p>
+
+En la siguiente captura se modificará una sala:
+
+<p align="center">
+	<img src="https://user-images.githubusercontent.com/103035621/169661563-c525ebc1-5ee8-44e7-b7c0-3fad678829f2.PNG">
+</p>
+
+Para finalizar, una conclusión, es muy importante fijarse en las anotaciones, una anotación sin poner puede afectar en el flujo del programa impidiendo el funcionamiento del aplicativo.

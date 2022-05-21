@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -33,7 +34,7 @@ public class PeliculaController {
 	}
 	
 	// Eliminar una sala
-	@GetMapping("/peliculas/{id}")
+	@DeleteMapping("/peliculas/{id}")
 	public void eliminarSalas(@PathVariable(name="id")Long codigo) {
 		peliculaServiceImpl.eliminarPeliculas(codigo);
 	}
@@ -45,7 +46,7 @@ public class PeliculaController {
 	}
 	
 	// Modificar sala
-	@PutMapping("/peliculas/{id")
+	@PutMapping("/peliculas/{id}")
 	public Peliculas modificarPeliculas (@PathVariable(name="id")Long codigo, @RequestBody Peliculas peliculas) {
 		Peliculas pelicula_a_modificar = new Peliculas();
 		Peliculas modificado = new Peliculas();

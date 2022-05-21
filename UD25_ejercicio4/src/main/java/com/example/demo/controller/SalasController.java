@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -33,7 +34,7 @@ public class SalasController {
 	}
 	
 	// Eliminar una sala
-	@GetMapping("/salas/{id}")
+	@DeleteMapping("/salas/{id}")
 	public void eliminarSalas(@PathVariable(name="id")Long codigo) {
 		salasServiceImpl.eliminarSalas(codigo);
 	}
@@ -45,7 +46,7 @@ public class SalasController {
 	}
 	
 	// Modificar sala
-	@PutMapping("/salas/{id")
+	@PutMapping("/salas/{id}")
 	public Salas modificarSalas (@PathVariable(name="id")Long codigo, @RequestBody Salas salas) {
 		Salas sala_a_modificar = new Salas();
 		Salas modificado = new Salas();

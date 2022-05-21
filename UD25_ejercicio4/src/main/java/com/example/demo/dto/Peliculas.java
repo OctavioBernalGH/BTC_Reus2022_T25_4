@@ -5,8 +5,6 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -17,13 +15,15 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 @Table(name="peliculas")// En caso que la tabla sea diferente
 public class Peliculas {
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)//busca ultimo valor y lo incrementa
 	private Long codigo;
-	@Column(name="nombrePelicula")
-	private String nombrePelicula;
-	@Column(name="CalificacionEdad")
-	private int CalificacionEdad;
+	
+	@Column(name="nombre_pelicula")
+	private String nombre_pelicula;
+	
+	@Column(name="calificacion_edad")
+	private int calificacion_edad;
 
 	// One to many
 	@OneToMany
@@ -41,10 +41,10 @@ public class Peliculas {
 	 * @param nombrePelicula
 	 * @param calificacionEdad
 	 */
-	public Peliculas(Long codigo, String nombrePelicula, int calificacionEdad) {
+	public Peliculas(Long codigo, String nombre_pelicula, int calificacion_edad) {
 		this.codigo = codigo;
-		this.nombrePelicula = nombrePelicula;
-		CalificacionEdad = calificacionEdad;
+		this.nombre_pelicula = nombre_pelicula;
+		this.calificacion_edad = calificacion_edad;
 	}
 
 	// Getters y setters
@@ -69,15 +69,15 @@ public class Peliculas {
 	 * @return de nombre
 	 */
 	public String getNombre() {
-		return nombrePelicula;
+		return nombre_pelicula;
 	}
 
 	/**
 	 * 
 	 * @param nombre
 	 */
-	public void setNombre(String nombre) {
-		this.nombrePelicula = nombre;
+	public void setNombre(String nombre_pelicula) {
+		this.nombre_pelicula = nombre_pelicula;
 	}
 
 	/**
@@ -85,21 +85,21 @@ public class Peliculas {
 	 * @return de CalificacionEdad
 	 */
 	public int getCalificacionEdad() {
-		return CalificacionEdad;
+		return calificacion_edad;
 	}
 
 	/**
 	 * 
 	 * @param calificacionEdad
 	 */
-	public void setCalificacionEdad(int calificacionEdad) {
-		CalificacionEdad = calificacionEdad;
+	public void setCalificacionEdad(int calificacion_edad) {
+		this.calificacion_edad = calificacion_edad;
 	}
 
 	// Metodo impresion de datos por consola
 	@Override
 	public String toString() {
-		return "Peliculas [codigo=" + codigo + ", nombre=" + nombrePelicula + ", CalificacionEdad=" + CalificacionEdad + "]";
+		return "Peliculas [codigo=" + codigo + ", nombre=" + nombre_pelicula + ", CalificacionEdad=" + calificacion_edad + "]";
 	}	
 	
 	@JsonIgnore

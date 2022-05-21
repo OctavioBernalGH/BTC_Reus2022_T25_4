@@ -2,32 +2,31 @@ package com.example.demo.dto;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="salas")// En caso que la tabla sea diferente
+@Table(name = "salas") // En caso que la tabla sea diferente
 public class Salas {
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)//busca ultimo valor y lo incrementa
 	private Long codigo;
-	@Column (name="pelicula")
-	private int pelicula;
-	@ManyToOne // Creamos una relacion de Foreign Key
-	@JoinColumn(name="nombreSala")
-	private String nombreSala;	
 	
+	@Column(name = "pelicula")
+	private int pelicula;
+	
+	@Column(name = "nombre_sala")
+	private String nombre_sala;
+
 	@ManyToOne
-	@JoinColumn(name="idSalas")
+	@JoinColumn(name = "id_peliculas")
 	private Peliculas peliculas;
 
-	//Constructores
+	// Constructores
 	public Salas() {
-		
+
 	}
 
 	/**
@@ -36,9 +35,9 @@ public class Salas {
 	 * @param nombreSala
 	 * @param pelicula
 	 */
-	public Salas(Long codigo, String nombreSala, int pelicula, Peliculas peliculas) {
+	public Salas(Long codigo, String nombre_sala, int pelicula, Peliculas peliculas) {
 		this.codigo = codigo;
-		this.nombreSala = nombreSala;
+		this.nombre_sala = nombre_sala;
 		this.pelicula = pelicula;
 		this.peliculas = peliculas;
 	}
@@ -65,15 +64,15 @@ public class Salas {
 	 * @return de nombreSala
 	 */
 	public String getNombreSala() {
-		return nombreSala;
+		return nombre_sala;
 	}
 
 	/**
 	 * 
 	 * @param nombreSala
 	 */
-	public void setNombreSala(String nombreSala) {
-		this.nombreSala = nombreSala;
+	public void setNombreSala(String nombre_sala) {
+		this.nombre_sala = nombre_sala;
 	}
 
 	/**
@@ -90,8 +89,8 @@ public class Salas {
 	 */
 	public void setPelicula(int pelicula) {
 		this.pelicula = pelicula;
-	}	
-	
+	}
+
 	public Peliculas getPeliculas() {
 		return peliculas;
 	}
@@ -102,6 +101,6 @@ public class Salas {
 
 	@Override
 	public String toString() {
-		return "Salas [codigo=" + codigo + ", nombreSala=" + nombreSala + ", pelicula=" + pelicula + "]";
-	}	
+		return "Salas [codigo=" + codigo + ", nombreSala=" + nombre_sala + ", pelicula=" + pelicula + "]";
+	}
 }
